@@ -1,0 +1,20 @@
+table{
+    border-collapse: collapse;
+}
+table th,
+table td{
+  border: 1px solid #d4d4d4;
+  padding: 8px;
+}
+
+table tbody tr:nth-child(odd){
+  background: transparent;
+}
+
+table tbody tr:nth-child(even){
+  background: #d4d4d4;
+}
+table tbody tr:hover{
+  background: #3a3a3a;
+  color:white;
+}

@@ -10,6 +10,7 @@ html {
 :root{
     --less: rgb(223, 223, 223);
     --subtitle: gray;
+    --green-theme:rgb(0, 75, 0);
 }
 aside{
     width:250px;
@@ -20,10 +21,38 @@ aside{
     border-right:3px solid var(--less);
     padding:1rem;
 }
+.doc-nav{
+    display:grid;
+    row-gap:10px;
+    margin-top:80px;
+}
+nav:not(.doc-nav){
+    position:absolute;
+    top:0;
+    width:100%;
+    padding:15px;
+    display:grid;
+    grid-template-columns: min-content min-content;
+    gap:10px;
+    left:0px;
+}
+nav:not(.doc-nav) a{
+    box-sizing: border-box;
+    border-bottom:3px solid var(--green-theme);
+    text-decoration: none;
+    color:black;
+    cursor:pointer;
+}
 main{
     width:calc(100% - 250px - 10rem);
+    max-width:1200px;
     float:right;
     padding:5rem;
+}
+@media screen and (min-width: 1400px) {
+    main{
+        margin-right:calc((50% - 250px) - 600px);
+    }
 }
 img{
     margin:auto;
@@ -35,17 +64,22 @@ img{
 #top-title {
     margin: auto;
     text-align: center;
-    transform: translateY(-100px);
+    transform: translateY(-140px);
+    width:fit-content;
+}
+#top-title *{
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(150, 150, 150, 0.75);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+    padding:10px;
+    font-size:2rem;
+    max-width:800px;
 }
-
 #top-title h1 {
-    font-size: 1.5rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     color:white;
 }
 /*-*/
@@ -58,9 +92,13 @@ section p{
 section h1, section h2{
     text-align:center;
 }
+section h2{
+    color:var(--green-theme);
+}
 .subtitle{
     font-style:italic;
     color:var(--subtitle);
+    text-align:center;
 }
 section ul{
     padding-left: 0;
